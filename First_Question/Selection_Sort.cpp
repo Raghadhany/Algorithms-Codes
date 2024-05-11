@@ -87,6 +87,7 @@ int main()
 	return 0;
 }
 
+
 //3- selection sort(recursive)  to sort string 
 
 #include <iostream>
@@ -119,6 +120,47 @@ int main() {
 	cout << "Sorted string: " << str << endl;
 	return 0;
 }
+
+
+//Or hossam's way:
+
+#include<iostream>
+using namespace std;
+
+int findMin(string& str, int i, int j)
+{
+	if (i == j)
+		return i;
+	int q = findMin(str, i + 1, j);
+	if (str[q] < str[i])
+		return q;
+	return i;
+}
+void selSort(string& str, int s, int i = 0)
+{
+	if (i == s)
+		return;
+	int q = findMin(str, i, s);
+	swap(str[i], str[q]);
+	selSort(str, s, i + 1);
+
+}
+void main()
+{
+	string str;
+	cin >> str;
+	int n = str.length();
+
+	//int s = sizeof(arr) / sizeof(arr[0]);
+	//cout << findMin(arr, 0, s - 1) << endl;
+
+	selSort(str, n - 1);
+
+	cout << "Sorted array: " << str << endl;
+
+}
+
+
 
 //4- selection sort(recursive)  to sort array of chars
 
@@ -169,4 +211,48 @@ int main() {
 	cout << endl;
 
 	return 0;
+}
+
+//or (hossam's way):
+
+#include<iostream>
+using namespace std;
+
+int findMin(char arr[], int i, int j)
+{
+	if (i == j)
+		return i;
+	int q = findMin(arr, i + 1, j);
+	if (arr[q] < arr[i])
+		return q;
+	return i;
+}
+void selSort(char arr[], int s, int i = 0)
+{
+	if (i == s)
+		return;
+	int q = findMin(arr, i, s);
+	swap(arr[i], arr[q]);
+	selSort(arr, s, i + 1);
+
+}
+void main()
+{
+	int n;
+	cin >> n;
+	char* arr = new char[n];
+	for (int i = 0; i < n; i++) {
+		cin >> arr[i];
+	}
+
+	//int s = sizeof(arr) / sizeof(arr[0]);
+	//cout << findMin(arr, 0, s - 1) << endl;
+
+	selSort(arr, n - 1);
+
+	cout << "Sorted array: ";
+	for (int i = 0; i < n; i++)
+		cout << arr[i] << " ";
+	cout << endl;
+
 }
