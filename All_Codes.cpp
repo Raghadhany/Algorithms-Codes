@@ -491,7 +491,6 @@ int main() {
 //########################################################################################################
 //2-  GCD(Euclid’s algorithm using only subtractions - consective integer checking algorithm.)
 
-/*
 //GCD Euclid’s algorithm using only subtractions
 #include <iostream> 
 using namespace std;
@@ -516,20 +515,20 @@ int main() {
 	return 0;
 
 }
-*/
+
 
 //GCD consective integer checking algorithm
 //Way one
-/*
+
 #include <iostream>
 using namespace std;
 
 int main() {
-	int m = 8, n = 12;
-	int t = min(m, n);
+	int x = 8, y = 12;
+	int t = min(x, y);
 	while (t > 0)
 	{
-		if (m % t == 0 && n % t == 0)
+		if (x % t == 0 && y % t == 0)
 		{
 			cout << t << "  ";
 			break;
@@ -538,7 +537,7 @@ int main() {
 	}
 	return 0;
 }
-*/
+
 
 //GCD noraml Euclid's
 //Euclid's Algorithm
@@ -576,7 +575,7 @@ int gcd(int m, int n)
 //########################################################################################################
 
 //3 - Design an algorithm for computing the value of a polynomial at a point x, which runs in time that is at most O(n) in the worst case.
-/*
+
 #include<iostream>
 using namespace std;
 
@@ -599,7 +598,7 @@ int main() {
 	}
 	cout << "result = " << sum << endl;
 }
-*/
+
 
 //########################################################################################################
 
@@ -609,7 +608,7 @@ int main() {
 //What is the maximum number of comparisons your algorithm makes 
 //if the lengths of the two given lists are m and n, respectively?
 
-/*
+
 #include<iostream> 
 #include<algorithm> 
 #define ll long long 
@@ -643,41 +642,41 @@ int main() {
 
 	return 0;
 }
-*/
+
 
 //########################################################################################################
 
 //7 - Write c++ code for a divide - and -conquer algorithm for finding the position 
 //of the largest element in an array of n numbers.
 
-/*
+
 #include<iostream>
 using namespace std;
 
-int PositionOfLargEle(int arr[], int low, int high) {
-	if (low == high) {
-		return low;
-	}
-	int mid = (low + high) / 2;
-	int largest_left = PositionOfLargEle(arr, low, mid);
-	int largest_right = PositionOfLargEle(arr, mid + 1, high);
-	if (arr[largest_left] > arr[largest_right]) {
-		return largest_left;
-	}
-	else {
-		return largest_right;
-	}
+int pos(int arr[], int s, int e) {
+	if (s == e) 
+    return s; 
+
+	int mid = (s + e) / 2; // Find the middle index
+	int largeleft  = pos(arr, s, mid); 
+	int largeright = pos(arr, mid + 1, e); 
+	
+    if(arr[largeleft]>arr[largeright])
+        return largeleft;
+    else
+        return largeright;
+
 }
 
 int main() {
 	int arr[] = { 1, 0, 4, 3 };
 	int size = sizeof(arr) / sizeof(arr[0]);
 
-	int pos = PositionOfLargEle(arr, 0, size - 1);
+	int pos = pos(arr, 0, size - 1);
 	cout << "The position is " << pos << endl;
 	return 0;
 }
-*/
+
 
 //########################################################################################################
 //8 - binary search or sequential search(iterative or recursive) about character in string
@@ -706,14 +705,14 @@ int linearSR(string str, char k, int i = 0)
 }
 
 // Recursive linear search in a string (backward direction)
-int linearSR2(string str, char k, int s)
-{
-	if (s < 0)
-		return -1;
-	if (str[s] == k)
-		return s;
-	return linearSR(str, k, s - 1);
-}
+// int linearSR2(string str, char k, int s)
+// {
+// 	if (s < 0)
+// 		return -1;
+// 	if (str[s] == k)
+// 		return s;
+// 	return linearSR(str, k, s - 1);
+// }
 
 // Iterative binary search in a string
 int binS(string str, char k)
