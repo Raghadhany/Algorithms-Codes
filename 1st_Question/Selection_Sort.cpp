@@ -122,7 +122,7 @@ int main() {
 }
 
 
-//Or hossam's way:
+//Or Section's way:
 
 #include<iostream>
 using namespace std;
@@ -213,7 +213,7 @@ int main() {
 	return 0;
 }
 
-//or (hossam's way):
+//or (Section's way):
 
 #include<iostream>
 using namespace std;
