@@ -215,7 +215,7 @@ int main() {
 }
 
 
-//Or hossam's way:
+//Or Section's way:
 
 /*
 
@@ -308,7 +308,7 @@ int main() {
 	return 0;
 }
 
-//or (hossam's way):
+//or (Section's way):
 /*
 
 #include<iostream>
