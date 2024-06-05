@@ -18,5 +18,4 @@ What is the maximum number of comparisons your algorithm makes if the lengths of
 <br/>
 6-  binary search or sequential search (iterative or recursive) about character in string <br />
 
-__🟤Missing codes__ <br /> 
--> Merge sort for strings and char in arr of characters <br />
+
